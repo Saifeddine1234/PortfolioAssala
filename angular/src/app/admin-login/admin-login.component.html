@@ -1,0 +1,70 @@
+<section class="h-100 h-custom" >
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-6">      
+    <div class="col-lg-12 text-center services-title">
+        <h1 class="text-uppercase title-text" style="font-family: Apple Chancery, cursive	;font-size: xx-large;">Login</h1>
+        <div class="divider-custom divider-light">
+
+          <i class="fas fa-star mr-3"></i><i class="fas fa-star mr-3"></i><i class="fas fa-star mr-3"></i>
+      </div>
+  <br>
+  <br>
+
+</div>
+<div class="alert alert-danger" *ngIf="alert != null " role="alert">
+  {{alert}}
+</div>
+<div class="alert alert-danger" *ngIf="(formGroup.get('username').invalid && formGroup.get('username').touched) || (formGroup.get('password').invalid && formGroup.get('password').touched)" role="alert">
+  Username or Password is Empty
+</div>
+
+
+          <div class="card" style="  background-color: #f7f8f8;">
+            <div class="card-body p-4">
+  
+              <div class="row">
+                <div class="col-lg-12 mb-2" >
+                    <form id="contact-form" name="contact-form" [formGroup]="formGroup" (ngSubmit)="loginProcess()">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1"  style="font-family:Bradley Hand, cursive;" class=" d-flex justify-content-start">Username</label>
+                                        <input type="email" class="form-control"  style="font-family:Bradley Hand, cursive;"  id="exampleInputEmail1" formControlName="username" aria-describedby="emailHelp" placeholder="">
+                                      </div>
+                                </div>
+                            <!--Grid column-->
+                
+                        </div>
+                        <!--Grid row-->
+                        <!--Grid row-->
+                        <div class="row ">
+                
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"  style="font-family:Bradley Hand, cursive;" class=" d-flex justify-content-start">Password</label>
+                                <input type="password" class="form-control" id="exampleInputEmail1"  style="font-family:Bradley Hand, cursive;"  formControlName="password" aria-describedby="emailHelp" placeholder="">
+                              </div>
+                        </div>
+                        </div>
+                        <!--Grid row-->
+                        <!--Grid row-->
+                        <div class="text-center text-md-center">
+                            <div class="d-flex flex-row flex-wrap">
+                                <button [disabled]="formGroup.invalid"  type="submit"  style="font-family: Apple Chancery, cursive	;" class="btn btn-dark d-flex justify-content-center">Login</button>                
+                              </div>               
+                        </div>  
+                  
+                    </form>
+                
+                </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+
