@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors({ origin: 'http://localhost:4200' }));
+app.use(cors({ origin: 'https://portfolio-assala.herokuapp.com/' }));
 
 //connecte mongodb
 mongoose.connect(config.database,{ useUnifiedTopology: true ,useNewUrlParser: true} , function(err) {
@@ -49,8 +49,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.listen(3001, function () {
+PORT = process.env.PORT || 3001
+app.listen(PORT, function () {
 
   console.log('listening on port 3001!'.green);
     });
